@@ -1,6 +1,9 @@
 {
   "short_name": "React App",
   "name": "Create React App Sample",
+  "components": {
+    "Lazy": "/Lazy_somerandomid.js"
+  },
   "icons": [
     {
       "src": "favicon.ico",
