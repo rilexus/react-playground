@@ -23,32 +23,28 @@ export class Command {
 export const dropElementComand = (dropZone, item) => {
   return new Command(
     function (layout) {
-      // console.log("dropZone", dropZone);
-      // console.log("item", item);
-
       const splitDropZonePath = dropZone.path.split(".");
       const pathToDropZone = splitDropZonePath.slice(0, -1).join(".");
 
       const newItem = { id: item.id, type: item.type };
-      if (item.type === COLUMN) {
+
+      if (item.type === "column") {
         newItem.children = item.children;
       }
 
       // sidebar into
-      if (item.type === SIDEBAR_ITEM) {
+      if (item.path === undefined) {
         // 1. Move sidebar item into page
         const newComponent = {
-          id: shortid.generate(),
           ...item.component,
+          id: shortid.generate(),
         };
 
-        const l = handleMoveSidebarComponentIntoParent(
+        return handleMoveSidebarComponentIntoParent(
           layout,
           splitDropZonePath,
           newComponent
         );
-
-        return l;
       }
 
       // move down here since sidebar items dont have path

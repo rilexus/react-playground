@@ -18,10 +18,7 @@ const DropZone = ({ data, onDrop, isLast, className, type }) => {
       const itemPath = item.path;
 
       // sidebar items can always be dropped anywhere
-      if (!itemPath) {
-        // if (data.childrenCount >= 3) {
-        //  return false;
-        // }
+      if (itemPath === undefined) {
         return true;
       }
 
