@@ -8,7 +8,7 @@ const ACCEPTS = [SIDEBAR_ITEM, COMPONENT, ROW, COLUMN];
 const DropZone = ({ data, onDrop, isLast, className, type }) => {
   const ref = useRef(null);
   const [{ isOver, canDrop, isDragging }, drop] = useDrop({
-    accept: ACCEPTS,
+    accept: data.accept,
     drop: (item, monitor) => {
       onDrop(data, item);
     },

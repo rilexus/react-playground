@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import DropZone from "./DropZone";
 import { getComponent } from "./getComponent";
 import { useDrag } from "react-dnd";
+import { getAccept } from "./getAccept";
 
 export const DraggableChild = ({ item, handleDrop, path, className }) => {
   const ref = useRef(null);
@@ -42,6 +43,7 @@ export const DraggableChild = ({ item, handleDrop, path, className }) => {
             <DropZone
               type={item.type}
               data={{
+                accept: getAccept(item),
                 path: currentPath,
                 childrenCount: item.children.length,
               }}
@@ -51,7 +53,6 @@ export const DraggableChild = ({ item, handleDrop, path, className }) => {
             <DraggableChild
               key={item.id}
               {...item.props}
-              style={{ ...item.props.style, opacity }}
               item={item}
               handleDrop={handleDrop}
               path={currentPath}
@@ -62,6 +63,7 @@ export const DraggableChild = ({ item, handleDrop, path, className }) => {
       <DropZone
         type={item.type}
         data={{
+          accept: getAccept(item),
           path:
             path === ""
               ? `${item.children.length}`
