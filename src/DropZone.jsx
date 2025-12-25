@@ -3,6 +3,7 @@ import classNames from "classnames";
 import { useDrop } from "react-dnd";
 
 const DropZone = ({ data, onDrop, isLast, className, type }) => {
+  console.log(type, data.accept);
   const ref = useRef(null);
   const [{ isOver, canDrop, isDragging }, drop] = useDrop({
     accept: data.accept,
@@ -18,8 +19,6 @@ const DropZone = ({ data, onDrop, isLast, className, type }) => {
       if (itemPath === undefined) {
         return true;
       }
-
-      console.log(item);
 
       const splitItemPath = itemPath.split(".");
 
@@ -74,19 +73,18 @@ const DropZone = ({ data, onDrop, isLast, className, type }) => {
   return (
     <div
       ref={ref}
-      className={classNames(
-        "dropZone",
-        { active: isActive, isLast },
-        className
-      )}
+      className={classNames({ isLast }, className)}
       style={{
+        flex: "0 0 auto",
+        transition: "200ms all",
+        ...(canDrop ? { background: "#b6e1faff" } : {}),
+        ...(isActive ? { background: "#0070b0ff" } : {}),
         ...(type === "row"
           ? {
-              width: "100%",
+              width: 40,
               height: 40,
             }
           : {
-              width: 40,
               height: 40,
             }),
       }}

@@ -33,15 +33,15 @@ body {
   margin: 20px;
   border: 1px solid green;
 }
-
+/* 
 .dropZone {
   flex: 0 0 auto;
   transition: 200ms all;
-}
+} */
 
-.dropZone:nth-of-type(2n) {
+/* .dropZone:nth-of-type(2n) {
   display: none;
-}
+} */
 
 .dropZone.horizontalDrag {
   width: 40px;
