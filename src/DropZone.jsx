@@ -5,7 +5,7 @@ import { COMPONENT, SIDEBAR_ITEM, ROW, COLUMN } from "./constants";
 
 const ACCEPTS = [SIDEBAR_ITEM, COMPONENT, ROW, COLUMN];
 
-const DropZone = ({ data, onDrop, isLast, className }) => {
+const DropZone = ({ data, onDrop, isLast, className, type }) => {
   const ref = useRef(null);
   const [{ isOver, canDrop, isDragging }, drop] = useDrop({
     accept: ACCEPTS,
@@ -84,7 +84,15 @@ const DropZone = ({ data, onDrop, isLast, className }) => {
         className
       )}
       style={{
-        height: 40,
+        ...(type === "row"
+          ? {
+              width: "100%",
+              height: 40,
+            }
+          : {
+              width: 40,
+              height: 40,
+            }),
       }}
     />
   );

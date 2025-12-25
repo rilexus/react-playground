@@ -1,5 +1,5 @@
 import shortid from "shortid";
-import { COMPONENT, ROW, COLUMN } from "./constants";
+import { ROW, COLUMN } from "./constants";
 
 const initialData = {
   layout: [
@@ -44,12 +44,7 @@ const initialData = {
                       padding: "10px",
                     },
                   },
-                  children: [
-                    // {
-                    //   type: COMPONENT,
-                    //   id: "component2",
-                    // },
-                  ],
+                  children: [],
                 },
                 {
                   type: "column",
@@ -61,12 +56,7 @@ const initialData = {
                       padding: "10px",
                     },
                   },
-                  children: [
-                    // {
-                    //   type: COMPONENT,
-                    //   id: "component2",
-                    // },
-                  ],
+                  children: [],
                 },
               ],
             },
@@ -91,12 +81,7 @@ const initialData = {
                       padding: "10px",
                     },
                   },
-                  children: [
-                    // {
-                    //   type: COMPONENT,
-                    //   id: "component2",
-                    // },
-                  ],
+                  children: [],
                 },
                 {
                   type: "column",
@@ -108,12 +93,7 @@ const initialData = {
                       padding: "10px",
                     },
                   },
-                  children: [
-                    // {
-                    //   type: COMPONENT,
-                    //   id: "component2",
-                    // },
-                  ],
+                  children: [],
                 },
               ],
             },
@@ -129,12 +109,7 @@ const initialData = {
               padding: "10px",
             },
           },
-          children: [
-            // {
-            //   type: COMPONENT,
-            //   id: "component2",
-            // },
-          ],
+          children: [],
         },
       ],
     },
@@ -149,7 +124,7 @@ const initialData = {
       },
       children: [
         {
-          type: COLUMN,
+          type: "column",
           id: "column2",
           props: {
             style: {
@@ -179,12 +154,7 @@ const initialData = {
                       padding: "10px",
                     },
                   },
-                  children: [
-                    // {
-                    //   type: COMPONENT,
-                    //   id: "component2",
-                    // },
-                  ],
+                  children: [],
                 },
                 {
                   type: "column",
@@ -196,12 +166,7 @@ const initialData = {
                       padding: "10px",
                     },
                   },
-                  children: [
-                    // {
-                    //   type: COMPONENT,
-                    //   id: "component2",
-                    // },
-                  ],
+                  children: [],
                 },
               ],
             },
@@ -210,13 +175,6 @@ const initialData = {
       ],
     },
   ],
-  components: {
-    component0: { id: "component0", type: "input", children: ["Some input"] },
-    component1: { id: "component1", type: "image", children: ["Some image"] },
-    component2: { id: "component2", type: "email", children: ["Some email"] },
-    component3: { id: "component3", type: "name", children: ["Some name"] },
-    component4: { id: "component4", type: "phone", children: ["Some phone"] },
-  },
 };
 
 export default initialData;

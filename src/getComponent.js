@@ -2,7 +2,7 @@ import Column from "./Column";
 import Component from "./Component";
 import Row from "./Row";
 
-export const getComponent = ({type}) => {
+export const getComponent = ({ type }) => {
   switch (type) {
     case "row":
       return Row;
@@ -11,6 +11,8 @@ export const getComponent = ({type}) => {
     case "component":
       return Component;
     default:
-      return null;
+      return ({ children }) => {
+        return children;
+      };
   }
 };

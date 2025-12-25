@@ -45,10 +45,6 @@ export const dropElementComand = (dropZone, item) => {
           id: newComponent.id,
           type: COMPONENT,
         };
-        // setComponents({
-        //   ...components,
-        //   [newComponent.id]: newComponent,
-        // });
 
         return handleMoveSidebarComponentIntoParent(
           layout,

@@ -50,10 +50,10 @@ const Container = () => {
           <DraggableChild
             item={{
               id: "layout",
+              type: "layout",
               children: layout,
             }}
             handleDrop={handleDrop}
-            components={components}
             path={""}
           />
         </div>

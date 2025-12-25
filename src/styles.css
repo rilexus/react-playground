@@ -67,6 +67,7 @@ body {
 
 .columns {
   display: flex;
+  align-items: stretch;
   padding: 20px 0;
 }
 
