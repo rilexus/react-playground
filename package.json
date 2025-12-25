@@ -12,7 +12,14 @@
     "react-scripts": "5.0.1",
     "web-vitals": "^2.1.4",
     "styled-components": "^6.1.15",
-    "chart.js": "^4.4.8"
+    "chart.js": "^4.4.8",
+    "classnames": "2.2.6",
+    "immutability-helper": "^3.0.0",
+    "lodash": "4.17.15",
+    "react-dnd": "10.0.2",
+    "react-dnd-html5-backend": "10.0.2",
+    "react-frame-component": "^4.1.0",
+    "shortid": "2.2.15"
   },
   "scripts": {
     "dev": "react-scripts start",
