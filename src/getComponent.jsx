@@ -1,3 +1,4 @@
+import { forwardRef } from "react";
 import Column from "./Column";
 import Component from "./Component";
 import Row from "./Row";
@@ -11,8 +12,8 @@ export const getComponent = ({ type }) => {
     case "component":
       return Component;
     default:
-      return ({ children }) => {
-        return children;
-      };
+      return forwardRef(({ children }, ref) => {
+        return <span ref={ref}>{children}</span>;
+      });
   }
 };

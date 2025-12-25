@@ -8,9 +8,9 @@ export const DraggableChild = ({ item, handleDrop, path, className }) => {
 
   const [{ isDragging }, drag] = useDrag({
     item: {
-      type: item.type,
-      id: item.id,
-      children: item.children,
+      type: item?.type,
+      id: item?.id,
+      children: item?.children,
       path,
     },
     collect: (monitor) => ({
@@ -32,6 +32,9 @@ export const DraggableChild = ({ item, handleDrop, path, className }) => {
       ref={ref}
     >
       {item.children.map((item, index) => {
+        if (typeof item === "string") return item;
+        if (item === null) return item;
+
         const currentPath = path === "" ? `${index}` : `${path}.${index}`;
 
         return (

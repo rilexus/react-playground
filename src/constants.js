@@ -10,51 +10,28 @@ export const SIDEBAR_ITEMS = [
     id: shortid.generate(),
     type: SIDEBAR_ITEM,
     component: {
-      type: "input",
-      content: "Some input",
+      type: "text",
+      id: shortid.generate(),
+      props: {
+        style: {},
+      },
+      children: ["Some"],
     },
   },
-  {
-    id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "name",
-      content: "Some name",
-    },
-  },
-  {
-    id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "email",
-      content: "Some email",
-    },
-  },
-  {
-    id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "phone",
-      content: "Some phone",
-    },
-  },
-  {
-    id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "image",
-      content: "Some image",
-    },
-  },
+
   {
     id: shortid.generate(),
     type: SIDEBAR_ITEM,
     component: {
       type: "row",
+      id: shortid.generate(),
       props: {
-        style: {},
+        style: {
+          border: "1px solid red",
+          padding: 0,
+        },
       },
-      children: ["Some image"],
+      children: [],
     },
   },
   {
@@ -62,10 +39,15 @@ export const SIDEBAR_ITEMS = [
     type: SIDEBAR_ITEM,
     component: {
       type: "column",
+      id: shortid.generate(),
       props: {
-        style: {},
+        style: {
+          border: "1px solid blue",
+          flex: "1 1 100%",
+          padding: "10px",
+        },
       },
-      children: ["Some image"],
+      children: [],
     },
   },
 ];

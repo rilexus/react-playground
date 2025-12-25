@@ -23,8 +23,8 @@ export class Command {
 export const dropElementComand = (dropZone, item) => {
   return new Command(
     function (layout) {
-      console.log("dropZone", dropZone);
-      console.log("item", item);
+      // console.log("dropZone", dropZone);
+      // console.log("item", item);
 
       const splitDropZonePath = dropZone.path.split(".");
       const pathToDropZone = splitDropZonePath.slice(0, -1).join(".");
@@ -41,16 +41,14 @@ export const dropElementComand = (dropZone, item) => {
           id: shortid.generate(),
           ...item.component,
         };
-        const newItem = {
-          id: newComponent.id,
-          type: COMPONENT,
-        };
 
-        return handleMoveSidebarComponentIntoParent(
+        const l = handleMoveSidebarComponentIntoParent(
           layout,
           splitDropZonePath,
-          newItem
+          newComponent
         );
+
+        return l;
       }
 
       // move down here since sidebar items dont have path
