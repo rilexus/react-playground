@@ -194,7 +194,7 @@ export const handleMoveSidebarComponentIntoParent = (
   splitDropZonePath,
   item
 ) => {
-    return addChildToChildren(layout, splitDropZonePath, item);
+  return addChildToChildren(layout, splitDropZonePath, item);
 };
 
 export const handleRemoveItemFromLayout = (layout, splitItemPath) => {

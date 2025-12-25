@@ -58,12 +58,12 @@ const Container = () => {
           />
         </div>
 
-        <TrashDropZone
+        {/* <TrashDropZone
           data={{
             layout,
           }}
           onDrop={handleDropToTrashBin}
-        />
+        /> */}
       </div>
     </div>
   );

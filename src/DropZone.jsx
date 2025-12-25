@@ -1,9 +1,6 @@
 import React, { useRef } from "react";
 import classNames from "classnames";
 import { useDrop } from "react-dnd";
-import { COMPONENT, SIDEBAR_ITEM, ROW, COLUMN } from "./constants";
-
-const ACCEPTS = [SIDEBAR_ITEM, COMPONENT, ROW, COLUMN];
 
 const DropZone = ({ data, onDrop, isLast, className, type }) => {
   const ref = useRef(null);
@@ -21,6 +18,8 @@ const DropZone = ({ data, onDrop, isLast, className, type }) => {
       if (itemPath === undefined) {
         return true;
       }
+
+      console.log(item);
 
       const splitItemPath = itemPath.split(".");
 

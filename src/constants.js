@@ -7,47 +7,34 @@ export const COMPONENT = "component";
 
 export const SIDEBAR_ITEMS = [
   {
+    type: "text",
     id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "text",
-      id: shortid.generate(),
-      props: {
-        style: {},
-      },
-      children: ["Some"],
+    props: {
+      style: {},
     },
+    children: ["Some"],
   },
 
   {
+    type: "row",
     id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "row",
-      id: shortid.generate(),
-      props: {
-        style: {
-          border: "1px solid red",
-          padding: 0,
-        },
+    props: {
+      style: {
+        border: "1px solid red",
+        padding: 0,
       },
-      children: [],
     },
+    children: [],
   },
   {
+    type: "column",
     id: shortid.generate(),
-    type: SIDEBAR_ITEM,
-    component: {
-      type: "column",
-      id: shortid.generate(),
-      props: {
-        style: {
-          border: "1px solid blue",
-          flex: "1 1 100%",
-          padding: "10px",
-        },
+    props: {
+      style: {
+        border: "1px solid blue",
+        padding: "10px",
       },
-      children: [],
     },
+    children: [],
   },
 ];

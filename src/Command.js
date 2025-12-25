@@ -4,7 +4,6 @@ import {
   handleMoveToDifferentParent,
   handleMoveWithinParent,
 } from "./helpers";
-import { COLUMN, COMPONENT, SIDEBAR_ITEM } from "./constants";
 
 export class Command {
   constructor(execute, reverse) {
@@ -36,7 +35,8 @@ export const dropElementComand = (dropZone, item) => {
       if (item.path === undefined) {
         // 1. Move sidebar item into page
         const newComponent = {
-          ...item.component,
+          // ...item.component,
+          ...item,
           id: shortid.generate(),
         };
 
