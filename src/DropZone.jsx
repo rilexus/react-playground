@@ -3,7 +3,6 @@ import classNames from "classnames";
 import { useDrop } from "react-dnd";
 
 const DropZone = ({ data, onDrop, isLast, className, type }) => {
-  console.log(type, data.accept);
   const ref = useRef(null);
   const [{ isOver, canDrop, isDragging }, drop] = useDrop({
     accept: data.accept,
@@ -21,18 +20,6 @@ const DropZone = ({ data, onDrop, isLast, className, type }) => {
       }
 
       const splitItemPath = itemPath.split(".");
-
-      // limit columns when dragging from one row to another row
-      const dropZonePathRowIndex = splitDropZonePath[0];
-      const itemPathRowIndex = splitItemPath[0];
-      const diffRow = dropZonePathRowIndex !== itemPathRowIndex;
-      if (
-        diffRow &&
-        splitDropZonePath.length === 2 &&
-        data.childrenCount >= 3
-      ) {
-        return false;
-      }
 
       // Invalid (Can't drop a parent element (row) into a child (column))
       const parentDropInChild = splitItemPath.length < splitDropZonePath.length;

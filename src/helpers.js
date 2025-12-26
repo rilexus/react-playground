@@ -132,50 +132,42 @@ export const handleMoveToDifferentParent = (
   splitItemPath,
   item
 ) => {
-  let newLayoutStructure;
-  const COLUMN_STRUCTURE = {
-    type: COLUMN,
-    id: shortid.generate(),
-    children: [item],
-  };
+  let newLayoutStructure = item;
 
-  const ROW_STRUCTURE = {
-    type: ROW,
-    id: shortid.generate(),
-  };
+  console.log({ newLayoutStructure });
 
-  switch (splitDropZonePath.length) {
-    case 1: {
-      // moving column outside into new row made on the fly
-      if (item.type === COLUMN) {
-        newLayoutStructure = {
-          ...ROW_STRUCTURE,
-          children: [item],
-        };
-      } else {
-        // moving component outside into new row made on the fly
-        newLayoutStructure = {
-          ...ROW_STRUCTURE,
-          children: [COLUMN_STRUCTURE],
-        };
-      }
-      break;
-    }
-    case 2: {
-      // moving component outside into a row which creates column
-      if (item.type === COMPONENT) {
-        newLayoutStructure = COLUMN_STRUCTURE;
-      } else {
-        // moving column into existing row
-        newLayoutStructure = item;
-      }
+  // switch (splitDropZonePath.length) {
+  //   case 1: {
+  //     // moving column outside into new row made on the fly
+  //     if (item.type === COLUMN) {
+  //       newLayoutStructure = {
+  //         ...ROW_STRUCTURE,
+  //         children: [item],
+  //       };
+  //     } else {
+  //       // moving component outside into new row made on the fly
+  //       newLayoutStructure = {
+  //         ...ROW_STRUCTURE,
+  //         children: [COLUMN_STRUCTURE],
+  //       };
+  //     }
+  //     break;
+  //   }
+  //   case 2: {
+  //     // moving component outside into a row which creates column
+  //     if (item.type === COMPONENT) {
+  //       newLayoutStructure = COLUMN_STRUCTURE;
+  //     } else {
+  //       // moving column into existing row
+  //       newLayoutStructure = item;
+  //     }
 
-      break;
-    }
-    default: {
-      newLayoutStructure = item;
-    }
-  }
+  //     break;
+  //   }
+  //   default: {
+  //     newLayoutStructure = item;
+  //   }
+  // }
 
   let updatedLayout = layout;
   updatedLayout = removeChildFromChildren(updatedLayout, splitItemPath);

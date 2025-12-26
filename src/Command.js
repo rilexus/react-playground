@@ -25,7 +25,7 @@ export const dropElementComand = (dropZone, item) => {
       const splitDropZonePath = dropZone.path.split(".");
       const pathToDropZone = splitDropZonePath.slice(0, -1).join(".");
 
-      const newItem = { id: item.id, type: item.type };
+      const newItem = JSON.parse(JSON.stringify(item));
 
       if (item.type === "column") {
         newItem.children = item.children;
@@ -35,7 +35,6 @@ export const dropElementComand = (dropZone, item) => {
       if (item.path === undefined) {
         // 1. Move sidebar item into page
         const newComponent = {
-          // ...item.component,
           ...item,
           id: shortid.generate(),
         };

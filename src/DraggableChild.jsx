@@ -9,9 +9,7 @@ export const DraggableChild = ({ item, handleDrop, path, className }) => {
 
   const [{ isDragging }, drag] = useDrag({
     item: {
-      type: item?.type,
-      id: item?.id,
-      children: item?.children,
+      ...item,
       path,
     },
     collect: (monitor) => ({
